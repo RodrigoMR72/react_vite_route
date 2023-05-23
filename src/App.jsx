@@ -5,6 +5,7 @@ import { Cadastro } from './pages/Cadastro'
 import { Sobre } from './pages/Sobre'
 import { Contato } from './pages/Contato'
 import { Home } from './pages/Home'
+import { Login } from './pages/Login'
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
 
       <BrowserRouter>
 
-        <nav>
+        {/* <nav>
 
           <ul>
 
@@ -31,12 +32,13 @@ function App() {
 
           </ul>
 
-        </nav>
+        </nav> */}
 
 
         <Routes>
 
           <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Login />} />
           <Route path='/cadastro' element={<Cadastro />} />
           <Route path='/sobre' element={<Sobre />} />
           <Route path='/contato' element={<Contato />} />
