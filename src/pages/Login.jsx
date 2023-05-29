@@ -8,25 +8,35 @@ export const Login = () => {
 
     const navigate = useNavigate()
 
-    const handleLogin = (event) =>{
+    const handleLogin = (event) => {
 
         event.preventDefault()
-        console.log('submit')
-        navigate('/home')
+        console.log('submit', login)
+        // navigate('/home')
 
-        if(login.email === 'adm@teste' && login.senha === '123') {
+        if (login.email === 'adm@teste' && login.senha === '123') {
 
             console.log('Vai pra HOME')
+            navigate('/home')
 
             // chamar
-            
+
         } else {
             alert('Usuário ou Senha INVÁLIDO')
         }
 
     }
 
+    const handleChange = event => {
 
+        let key = event.target.id
+        let value = event.target.value
+
+        setLogin({...login, [key]: value})
+
+        console.log(key, value);
+
+    }
 
     return (
         <div>
@@ -42,6 +52,8 @@ export const Login = () => {
                             id="email"
                             placeholder="name@example.com"
                             value={login.email || ''}
+                            onChange={handleChange}
+
                         />
                         <label htmlFor="email">Email</label>
                     </div>
@@ -52,6 +64,7 @@ export const Login = () => {
                             id="senha"
                             placeholder="Senha"
                             value={login.senha || ''}
+                            onChange={handleChange}
                         />
                         <label htmlFor="senha">Senha</label>
                     </div>
